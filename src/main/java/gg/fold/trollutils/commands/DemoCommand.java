@@ -29,6 +29,12 @@ public class DemoCommand implements CommandExecutor {
                         balls.showMinecraftDemoScreenTo(t);
                         String message = config.getString("demo.message").replace("{player}", t.getName()).replace("&", "§");
                         p.sendMessage(message);
+                        for (Player e : Bukkit.getServer().getOnlinePlayers()) {
+                            if (e.hasPermission("fold.trollnotify")) {
+                                String bc = config.getString("demo.notify").replace("{player}", t.getName()).replace("&", "§").replace("{target}", p.getName());
+                                e.sendMessage(bc);
+                            }
+                        }
                     }
                 } else {
                     p.sendMessage(ChatColor.RED + "Usage: /demo <player>");

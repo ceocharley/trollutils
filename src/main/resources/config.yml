@@ -10,7 +10,9 @@
 crash:
   enabled: true
   message: '&eyou just crashed the shit out of &d{player} &e&lLMFAOFALMFAOFLAMFOALMFAO'
+  notify: '&7&o[{player}: &dCrashed {target}&7&o]'
 
 demo:
   enabled: true
   message: '&eyou just demoed the shit out of &d{player}'
+  notify: '&7&o[{player}: &dDemo moded {target}&7&o]'

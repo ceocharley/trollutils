@@ -6,7 +6,7 @@
 
     <groupId>gg.fold</groupId>
     <artifactId>trollutils</artifactId>
-    <version>b1</version>
+    <version>b2</version>
     <packaging>jar</packaging>
 
     <name>TrollUtils</name>
