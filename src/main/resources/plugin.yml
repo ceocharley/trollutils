@@ -1,0 +1,13 @@
+name: TrollUtils
+version: '${project.version}'
+main: gg.fold.trollutils.Trollutils
+authors: [ Charley ]
+description: you can troll idiots
+
+commands:
+  demo:
+    description: demo mode a player
+    aliases: [ demomode, demoballs ]
+  crash:
+    description: crash a player
+    aliases: [ crashplayer, fuck, fuckintheass ]
