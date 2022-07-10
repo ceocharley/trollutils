@@ -29,7 +29,7 @@ public class CrashCommand implements CommandExecutor {
                     p.sendMessage(message);
                     for (Player e : Bukkit.getServer().getOnlinePlayers()) {
                         if (e.hasPermission("fold.trollnotify")) {
-                            String bc = config.getString("crash.notify").replace("{player}", t.getName()).replace("&", "§").replace("{target}", p.getName());
+                            String bc = config.getString("crash.notify").replace("{player}", p.getName()).replace("&", "§").replace("{target}", t.getName());
                             e.sendMessage(bc);
                         }
                     }
