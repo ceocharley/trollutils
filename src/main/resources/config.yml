@@ -1,0 +1,16 @@
+#  _______        _ _       _   _ _
+# |__   __|      | | |     | | (_) |
+#    | |_ __ ___ | | |_   _| |_ _| |___
+#    | | '__/ _ \| | | | | | __| | / __|
+#    | | | | (_) | | | |_| | |_| | \__ \
+#    |_|_|  \___/|_|_|\__,_|\__|_|_|___/
+
+# a plugin created by charley because hes big brain to fuck with people
+
+crash:
+  enabled: true
+  message: '&eyou just crashed the shit out of &d{player} &e&lLMFAOFALMFAOFLAMFOALMFAO'
+
+demo:
+  enabled: true
+  message: '&eyou just demoed the shit out of &d{player}'

@@ -9,12 +9,20 @@ public final class Trollutils extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        long startTime = System.nanoTime();
+        getServer().getConsoleSender().sendMessage("Loading " + getName() + " version " +
+                getDescription().getVersion() + " by " + getDescription().getAuthors());
         getCommand("crash").setExecutor(new CrashCommand());
         getCommand("demo").setExecutor(new DemoCommand());
+        saveDefaultConfig();
+        long elapsedTime = System.nanoTime() - startTime;
+        getServer().getConsoleSender().sendMessage("Enabled " + getName() + " in " + elapsedTime/1000000 + "ms");
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        long startTime = System.nanoTime();
+        long elapsedTime = System.nanoTime() - startTime;
+        getServer().getConsoleSender().sendMessage("Disabled " + getName() + " in " + elapsedTime/1000000 + "ms");
     }
 }

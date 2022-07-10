@@ -6,7 +6,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+
+import static org.bukkit.Bukkit.getServer;
 
 
 public class CrashCommand implements CommandExecutor {
@@ -14,11 +18,16 @@ public class CrashCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player p = (Player) sender;
+        Plugin plugin = getServer().getPluginManager().getPlugin("TrollUtils");
+        FileConfiguration config = plugin.getConfig();
         if (p.hasPermission("fold.crash")) {
             if (args.length == 1) {
                 final Player t = Bukkit.getPlayer(args[0]);
-                CrashUtils.crashPlayer(sender, t);
-                p.sendMessage(ChatColor.YELLOW + "crashed the shit out of " + ChatColor.LIGHT_PURPLE + t.getName() + " LOLOLOLOL");
+                if (t != null) {
+                    CrashUtils.crashPlayer(sender, t);
+                    String message = config.getString("crash.message").replace("{player}", t.getName()).replace("&", "§");
+                    p.sendMessage(message);
+                }
             } else {
                 p.sendMessage(ChatColor.RED + "Usage: /crash <player>");
             }
